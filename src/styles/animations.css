@@ -1,0 +1,63 @@
+/* =========================================================================
+   ANIMATIONS — shared keyframes & ambient motion
+   ========================================================================= */
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.5; }
+  70% { transform: scale(1.25); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0; }
+  to { background-position: 60px 60px; }
+}
+
+.float { animation: floaty 6s var(--ease-in-out) infinite; }
+
+/* Ambient blueprint grid used behind hero / panels */
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--frost-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--frost-line) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 75%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Soft brand glow blobs */
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+.glow--cyan { background: radial-gradient(circle, rgba(47,139,240,0.34), transparent 70%); }
+.glow--blue { background: radial-gradient(circle, rgba(226,116,58,0.28), transparent 70%); }
+
+/* slow hero/banner zoom-in on load (used by hero + detail banners) */
+@keyframes heroZoom { from { transform: scale(1.12); } to { transform: scale(1); } }

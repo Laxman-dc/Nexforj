@@ -1,0 +1,65 @@
+.flow { list-style: none; max-width: 760px; }
+.flow__step {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 1.4rem;
+}
+.flow__marker { position: relative; display: flex; flex-direction: column; align-items: center; }
+.flow__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-pill);
+  background: var(--grad-brand-soft);
+  border: 1px solid var(--frost-line);
+  font-family: var(--font-data);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent-deep);
+  flex: none;
+}
+.flow__line {
+  flex: 1;
+  width: 2px;
+  margin: 0.4rem 0;
+  background: linear-gradient(var(--accent), transparent);
+  opacity: 0.5;
+}
+.flow__content { padding-bottom: 2.2rem; }
+.flow__title { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; color: var(--ink); letter-spacing: -0.01em; }
+.flow__blurb { color: var(--text-muted); line-height: 1.6; margin: 0.5rem 0 0.9rem; max-width: 56ch; }
+.flow__detail { list-style: none; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.flow__detail li {
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: var(--font-data);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.process__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  padding: 2.2rem 2.4rem;
+  border-radius: var(--r-xl);
+  background: var(--grad-deep);
+  box-shadow: var(--shadow-brand);
+}
+.process__cta-title { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h2); color: #fff; letter-spacing: -0.02em; }
+.process__cta-lead { color: rgba(255, 255, 255, 0.85); margin-top: 0.4rem; }
+
+@media (max-width: 560px) {
+  .flow__step { grid-template-columns: 52px 1fr; gap: 1rem; }
+  .flow__num { width: 48px; height: 48px; font-size: 0.95rem; }
+  .process__cta { flex-direction: column; align-items: flex-start; padding: 1.8rem; }
+}
+
+.process__faq { max-width: var(--container-narrow); }

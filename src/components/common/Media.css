@@ -1,0 +1,48 @@
+.media {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  background: var(--surface-2);
+  isolation: isolate;
+}
+.media--rounded { border-radius: var(--r-lg); }
+.media__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.1s var(--ease-out);
+  will-change: transform;
+}
+/* slow zoom on hover (Ken Burns) — only when not parallax-driven */
+.media:hover .media__img { transform: scale(1.07); }
+
+.media__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,12,22,0) 35%, rgba(8,12,22,0.72) 100%);
+  z-index: 1;
+}
+.media__cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 1.2rem 1.4rem;
+  color: #fff;
+}
+
+/* a thin brand hairline that wipes across on reveal */
+.media--rounded::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px var(--frost-line);
+  z-index: 3;
+  pointer-events: none;
+}

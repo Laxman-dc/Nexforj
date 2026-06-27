@@ -1,0 +1,24 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  line-height: 0;
+  transition: transform var(--t-fast), opacity var(--t-fast);
+}
+.logo:hover { transform: translateY(-1px); }
+.logo:active { transform: translateY(0); }
+
+.logo__img {
+  display: block;
+  height: 42px;
+  width: auto;
+  user-select: none;
+}
+.logo--mark .logo__img { height: 34px; }
+
+/* Lift the dark phoenix slightly so it reads on the dark theme */
+[data-theme='dark'] .logo__img { filter: brightness(1.18) saturate(1.05); }
+
+@media (max-width: 560px) {
+  .logo__img { height: 34px; }
+}

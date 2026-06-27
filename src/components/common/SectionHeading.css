@@ -1,0 +1,15 @@
+.shead { display: flex; flex-direction: column; gap: 0.7rem; max-width: 60ch; }
+.shead--center { align-items: center; text-align: center; margin-inline: auto; }
+.shead__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.shead__lead { margin-top: 0.2rem; }
+
+.shead--dark .eyebrow { color: var(--accent-deep); }
+.shead--dark .shead__title { color: #fff; }
+.shead--dark .shead__lead { color: rgba(255,255,255,0.78); }

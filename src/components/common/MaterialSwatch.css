@@ -1,0 +1,67 @@
+.swatch {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+}
+.swatch:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--line-strong); }
+
+.swatch__chip {
+  position: relative;
+  aspect-ratio: 16/10;
+  background-color: #9aa3ad;
+  background-blend-mode: overlay, overlay, normal;
+  overflow: hidden;
+}
+/* moving specular highlight on hover */
+.swatch__sheen {
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.45), transparent);
+  transform: skewX(-18deg);
+  transition: left 0.7s var(--ease-out);
+}
+.swatch:hover .swatch__sheen { left: 120%; }
+
+.swatch__grades {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  padding: 0.22rem 0.6rem;
+  border-radius: var(--r-pill);
+  background: rgba(255, 253, 248, 0.9);
+  color: var(--text);
+  font-family: var(--font-data);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+}
+
+.swatch__body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem 1.05rem;
+}
+.swatch__name { font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: var(--ink); }
+.swatch__sub { margin-top: 0.2rem; font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; }
+.swatch__go {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  color: var(--accent-deep);
+  transition: background var(--t-fast), color var(--t-fast), transform var(--t-base);
+}
+.swatch:hover .swatch__go { background: var(--grad-brand); color: var(--on-accent); transform: rotate(45deg); }

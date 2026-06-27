@@ -1,0 +1,145 @@
+/* =========================================================================
+   PRAIMO INNOVATIONS — DESIGN TOKENS
+   Warm cream light theme + warm charcoal dark theme. Blue brand accent
+   (from the logo) used sparingly, with an ember highlight for warmth.
+   ========================================================================= */
+
+:root {
+  /* brand ramp (kept for reference / gradients) */
+  --cyan: #2a8df0;
+  --sky: #2f7fe0;
+  --blue: #1763d6;
+  --blue-deep: #0f47ad;
+  --navy: #0e2f63;
+
+  /* ---- LIGHT (cream) ---- */
+  --bg: #f5efe3;
+  --bg-2: #efe7d8;
+  --surface: #fffdf8;
+  --surface-2: #f2ecde;
+  --surface-3: #e9e0cf;
+
+  --ink: #1c1a16;
+  --text: #332f28;
+  --text-muted: #6f675b;
+  --text-faint: #9d9384;
+
+  --line: #e4dbc9;
+  --line-strong: #d6cbb4;
+
+  --accent: #1c66d4;
+  --accent-deep: #0f47ad;
+  --accent-soft: #e7eefb;
+  --on-accent: #ffffff;
+
+  --ember: #e2743a;
+  --ember-deep: #c25a26;
+  --ember-soft: #f8e7da;
+
+  --frost: rgba(255, 253, 248, 0.72);
+  --frost-line: rgba(28, 26, 22, 0.09);
+  --ring: rgba(28, 102, 212, 0.32);
+
+  /* gradients */
+  --grad-brand: linear-gradient(120deg, #2f8bf0 0%, #1c66d4 55%, #0f47ad 100%);
+  --grad-brand-soft: linear-gradient(120deg, rgba(47,139,240,0.14), rgba(28,102,212,0.06));
+  --grad-text: linear-gradient(100deg, #2f8bf0, #1c66d4 60%, #0f47ad);
+  --grad-ember: linear-gradient(120deg, #f08a3e, #e2743a 60%, #c25a26);
+  --grad-band: linear-gradient(180deg, var(--bg), var(--bg-2));
+  --grad-deep: linear-gradient(135deg, #122a4d 0%, #0c1c38 60%, #0a1830 100%);
+
+  /* type */
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-data: 'Space Grotesk', monospace;
+
+  --fs-eyebrow: 0.82rem;
+  --fs-body: 1.02rem;
+  --fs-lead: clamp(1.1rem, 1.6vw, 1.32rem);
+  --fs-h4: 1.18rem;
+  --fs-h3: clamp(1.5rem, 2.4vw, 2rem);
+  --fs-h2: clamp(2rem, 3.6vw, 3.1rem);
+  --fs-h1: clamp(2.7rem, 6vw, 5rem);
+
+  /* radii */
+  --r-xs: 7px;
+  --r-sm: 11px;
+  --r-md: 15px;
+  --r-lg: 22px;
+  --r-xl: 30px;
+  --r-pill: 999px;
+
+  /* shadows (warm-tinted) */
+  --shadow-sm: 0 1px 2px rgba(60, 45, 20, 0.06), 0 2px 8px rgba(60, 45, 20, 0.05);
+  --shadow-md: 0 6px 18px rgba(50, 40, 20, 0.10), 0 2px 6px rgba(50, 40, 20, 0.06);
+  --shadow-lg: 0 22px 50px rgba(45, 35, 18, 0.16), 0 6px 16px rgba(45, 35, 18, 0.08);
+  --shadow-brand: 0 14px 34px rgba(28, 102, 212, 0.30);
+  --shadow-ember: 0 14px 34px rgba(226, 116, 58, 0.30);
+
+  /* layout */
+  --container: 1240px;
+  --container-narrow: 920px;
+  --gutter: clamp(1.1rem, 4vw, 2.6rem);
+  --section-y: clamp(4rem, 9vw, 8rem);
+  --nav-h: 76px;
+
+  /* motion */
+  --t-fast: 0.18s ease;
+  --t-base: 0.32s ease;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* z-index */
+  --z-content: 1;
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+
+  /* section helpers */
+  --band: var(--bg-2);
+  --tint: var(--surface-2);
+
+  color-scheme: light;
+}
+
+/* ---- DARK (warm charcoal) ---- */
+[data-theme='dark'] {
+  --bg: #15120d;
+  --bg-2: #1b1610;
+  --surface: #211b14;
+  --surface-2: #2a2319;
+  --surface-3: #352c20;
+
+  --ink: #f7f1e6;
+  --text: #e8e1d2;
+  --text-muted: #a99f8c;
+  --text-faint: #7d7464;
+
+  --line: #322a1f;
+  --line-strong: #45392a;
+
+  --accent: #5a9eff;
+  --accent-deep: #8fbcff;
+  --accent-soft: #16284a;
+  --on-accent: #0a1326;
+
+  --ember: #ff9a52;
+  --ember-deep: #ff8638;
+  --ember-soft: #38241680;
+
+  --frost: rgba(33, 27, 20, 0.72);
+  --frost-line: rgba(255, 244, 228, 0.08);
+  --ring: rgba(90, 158, 255, 0.4);
+
+  --grad-brand: linear-gradient(120deg, #5a9eff 0%, #3f7fe6 60%, #2f64c8 100%);
+  --grad-brand-soft: linear-gradient(120deg, rgba(90,158,255,0.18), rgba(90,158,255,0.05));
+  --grad-text: linear-gradient(100deg, #74b0ff, #5a9eff 60%, #3f7fe6);
+  --grad-band: linear-gradient(180deg, var(--bg), var(--bg-2));
+  --grad-deep: linear-gradient(135deg, #1a3151 0%, #122440 60%, #0d1a30 100%);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md: 0 6px 18px rgba(0,0,0,0.45);
+  --shadow-lg: 0 22px 50px rgba(0,0,0,0.55);
+
+  color-scheme: dark;
+}

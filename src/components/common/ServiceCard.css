@@ -1,0 +1,82 @@
+.scard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+  will-change: transform;
+}
+.scard:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--line-strong); }
+
+.scard__media { position: relative; aspect-ratio: 16/11; overflow: hidden; }
+.scard__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.1s var(--ease-out);
+}
+.scard:hover .scard__img { transform: scale(1.08); }
+.scard__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,12,22,0.05) 40%, rgba(8,12,22,0.45) 100%);
+}
+.scard__tag {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--r-pill);
+  background: rgba(255, 253, 248, 0.92);
+  color: var(--accent-deep);
+  font-family: var(--font-data);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.scard__count {
+  position: absolute;
+  bottom: 0.85rem;
+  right: 0.95rem;
+  color: #fff;
+  font-family: var(--font-data);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.scard__body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 1.1rem 1.2rem 1.3rem;
+}
+.scard__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.12rem;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.scard__sub { margin-top: 0.25rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.45; }
+.scard__go {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  color: var(--accent-deep);
+  transition: background var(--t-fast), color var(--t-fast), transform var(--t-base);
+}
+.scard:hover .scard__go { background: var(--grad-brand); color: var(--on-accent); transform: rotate(45deg); }
