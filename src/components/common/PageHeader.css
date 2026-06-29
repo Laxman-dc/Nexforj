@@ -1,7 +1,7 @@
 .pagehead {
   position: relative;
-  padding-top: calc(var(--nav-h) + 3.5rem);
-  padding-bottom: 2.5rem;
+  padding-top: calc(var(--nav-h) + 1.5rem);
+  padding-bottom: 1.5rem;
   overflow: hidden;
   background:
     radial-gradient(120% 100% at 100% 0%, var(--surface-2), transparent 60%),

@@ -8,21 +8,20 @@ export const hero = {
   eyebrow: 'Precision manufacturing, on demand',
   title: ['From your drawing', 'to a finished part'],
   lead:
-    'Praimo Innovations is a full-service digital manufacturing partner. Upload a file, choose a material and a process, and our shop floor turns it into a real, inspected part — shipped anywhere in the world. Quotes come back to your inbox after a real engineer reviews the job.',
+    'Nexforj is a full-service digital manufacturing partner. Upload a file, choose a process, and our shop floor turns it into a real, inspected part — shipped anywhere in the world. Quotes come back to your inbox after a real engineer reviews the job.',
   primary: { label: 'Start a project', path: '/order' },
   secondary: { label: 'Explore services', path: '/services' },
 }
 
 export const stats = [
-  { value: '50+', label: 'Material families in stock' },
-  { value: '11', label: 'In-house process groups' },
+  { value: '3', label: 'Core manufacturing processes' },
   { value: '72 hrs', label: 'Typical prototype turnaround' },
   { value: 'Global', label: 'Shipping & support' },
 ]
 
 export const trustStrip = [
-  'Aerospace', 'Automotive', 'Robotics', 'Medical Devices', 'Energy',
-  'Consumer Electronics', 'Industrial Equipment', 'Defense', 'Research Labs',
+  'Rieter', 'Hitachi', 'Halliburton', 'ITC', 'Indian Railways',
+  'India Forge', 'Bharat Forge', 'Larsen & Toubro', 'Tata Motors',
 ]
 
 export const valueProps = [
@@ -31,11 +30,7 @@ export const valueProps = [
     body:
       'Cutting, machining, fabrication, gears, casting, moulding, finishing and inspection live under one roof — so a multi-step part never needs a second vendor or a second shipment.',
   },
-  {
-    title: 'Materials without the gaps',
-    body:
-      'From mild steel and aluminium to PEEK, carbon fibre and silicone, our library spans the metals, plastics, composites and elastomers real products are actually built from.',
-  },
+
   {
     title: 'Engineered, not just made',
     body:
@@ -55,16 +50,16 @@ export const capabilities = {
     'Most parts touch more than one machine. Because every step happens in-house, we route work between processes without handoffs, delays or finger-pointing.',
   groups: [
     {
-      title: 'Forming & cutting',
-      items: ['Fiber laser & plasma cutting', 'Waterjet', 'CNC press brake bending', 'Tube & profile cutting', 'Sawing & shearing'],
+      title: 'CNC Machining',
+      items: ['CNC Machining Service', 'CNC Milling', 'CNC Turning'],
     },
     {
-      title: 'Machining',
-      items: ['3 / 4 / 5-axis CNC milling', 'CNC turning & live tooling', 'Surface & cylindrical grinding', 'EDM & wire EDM', 'Drilling, tapping, boring'],
+      title: '3D Printing',
+      items: ['Fused Deposition Modeling (FDM)', 'Stereolithography (SLA)', 'Selective Laser Sintering (SLS)', 'Multi Jet Fusion (MJF)'],
     },
     {
-      title: 'Build & finish',
-      items: ['MIG / TIG / robotic welding', 'Gear hobbing & shaping', 'Investment & sand casting', 'Injection moulding', 'Anodise, plate, powder coat'],
+      title: 'Sheet Metal Fabrication',
+      items: ['Laser Cutting', 'Tube Laser Cutting', 'Waterjet Cutting', 'Plasma Cutting', 'Bending & Rolling', 'Welding and Assembly'],
     },
   ],
 }
@@ -111,7 +106,7 @@ export const about = {
   eyebrow: 'Who we are',
   title: 'A modern shop floor, wired to your screen',
   paragraphs: [
-    'Praimo Innovations connects designers and engineers to a full-service manufacturing floor through a single, calm interface. The complexity of routing a part across machines, materials and finishes stays with us — you simply describe what you need.',
+    'Nexforj connects designers and engineers to a full-service manufacturing floor through a single, calm interface. The complexity of routing a part across machines, materials and finishes stays with us — you simply describe what you need.',
     'We built the platform around real work, not stock-photo gloss. The processes you see are the processes we run, and the materials you browse are the stock we cut, turn and form every day. Understanding the part is the first step to making it well.',
     'From a single prototype to a repeating production run, our promise is the same: precise parts, honest timelines, and an engineer on the other end of every quote.',
   ],

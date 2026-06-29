@@ -1,0 +1,33 @@
+.process-hero-sketch {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Add a soft glow behind the transparent sketch for emphasis */
+  background: radial-gradient(circle at center, var(--surface) 0%, transparent 70%);
+}
+
+.ph-svg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  color: var(--accent);
+  opacity: 0.9;
+}
+
+[data-theme='dark'] .ph-svg {
+  opacity: 1;
+}
+
+/* Subtle animation to the sketch paths */
+.ph-paths path,
+.ph-paths circle,
+.ph-paths rect {
+  animation: ph-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes ph-pulse {
+  0% { opacity: 0.8; }
+  100% { opacity: 1; }
+}

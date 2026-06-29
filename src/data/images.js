@@ -28,8 +28,8 @@ const ID = {
 export const siteImages = {
   hero: u(ID.factory, 1800),
   heroAlt: u(ID.laser, 1600),
-  about: u(ID.lathe, 1500),
-  aboutWide: u(ID.factory, 1600),
+  about: '/images/about_cad.png',
+  aboutWide: '/images/about_cnc.png',
   order: u(ID.cncMill, 1400),
   processBanner: u(ID.weld, 1600),
   ctaTexture: u(ID.gears, 1400),

@@ -1,8 +1,8 @@
 {
-  "name": "praimo-innovations",
+  "name": "nexforj",
   "private": true,
-  "version": "3.0.0",
-  "description": "Praimo Innovations — global precision manufacturing platform. Real manufacturing photography, content-rich pages, scroll animations. React + Vite + Framer Motion.",
+  "version": "0.0.0",
+  "description": "Nexforj — global precision manufacturing platform. Real manufacturing photography, content-rich pages, scroll animations. React + Vite + Framer Motion.",
   "type": "module",
   "scripts": {
     "dev": "vite",

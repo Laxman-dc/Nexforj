@@ -1,8 +1,8 @@
-/* =========================================================================
-   PRAIMO INNOVATIONS — DESIGN TOKENS
+/* ==========================================================================
+   NEXFORJ — DESIGN TOKENS
    Warm cream light theme + warm charcoal dark theme. Blue brand accent
    (from the logo) used sparingly, with an ember highlight for warmth.
-   ========================================================================= */
+   ========================================================================== */
 
 :root {
   /* brand ramp (kept for reference / gradients) */
@@ -80,7 +80,7 @@
   --container: 1240px;
   --container-narrow: 920px;
   --gutter: clamp(1.1rem, 4vw, 2.6rem);
-  --section-y: clamp(4rem, 9vw, 8rem);
+  --section-y: clamp(3rem, 6vw, 5rem);
   --nav-h: 76px;
 
   /* motion */
@@ -121,7 +121,7 @@
   --accent: #5a9eff;
   --accent-deep: #8fbcff;
   --accent-soft: #16284a;
-  --on-accent: #0a1326;
+  --on-accent: #ffffff;
 
   --ember: #ff9a52;
   --ember-deep: #ff8638;

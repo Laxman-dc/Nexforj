@@ -16,8 +16,8 @@
 }
 .logo--mark .logo__img { height: 34px; }
 
-/* Lift the dark phoenix slightly so it reads on the dark theme */
-[data-theme='dark'] .logo__img { filter: brightness(1.18) saturate(1.05); }
+/* Invert the dark logo to white but keep the blue hue */
+[data-theme='dark'] .logo__img { filter: invert(1) hue-rotate(180deg) brightness(1.5); }
 
 @media (max-width: 560px) {
   .logo__img { height: 34px; }

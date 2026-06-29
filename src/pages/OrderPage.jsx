@@ -13,7 +13,7 @@ const FINISHES = [
 ]
 const QUALITY = ['Standard inspection', 'Dimensional report', 'CMM inspection', 'Material certificate', 'ISO documentation']
 
-const ORDER_EMAIL = 'quotes@praimo-innovations.com'
+const ORDER_EMAIL = 'quotes@nexforj.com'
 
 export default function OrderPage() {
   const [files, setFiles] = useState([])
@@ -39,7 +39,7 @@ export default function OrderPage() {
 
   const buildMailto = () => {
     const lines = [
-      'Hello Praimo Innovations team,',
+      'Hello Nexforj team,',
       '',
       'I would like a quote for the following:',
       '',

@@ -62,4 +62,36 @@
   .process__cta { flex-direction: column; align-items: flex-start; padding: 1.8rem; }
 }
 
-.process__faq { max-width: var(--container-narrow); }
+.process__faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.relative-page {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Process Page Scattered Doodles */
+.process__doodles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.process-doodle {
+  position: absolute;
+  color: var(--ink);
+  opacity: 0.1;
+  pointer-events: none;
+  filter: url(#process-sketch-filter);
+}
+[data-theme='dark'] .process-doodle { opacity: 0.15; }
+
+.pd-1 { width: 150px; height: 150px; top: 15%; left: 5%; transform: rotate(-15deg); }
+.pd-2 { width: 180px; height: 180px; top: 40%; right: 2%; transform: rotate(10deg); }
+.pd-3 { width: 220px; height: 220px; top: 60%; left: -50px; transform: rotate(-30deg); }
+.pd-4 { width: 140px; height: 140px; bottom: 15%; right: 5%; transform: rotate(15deg); }
+.pd-5 { width: 120px; height: 120px; bottom: 5%; left: 30%; transform: rotate(-45deg); }

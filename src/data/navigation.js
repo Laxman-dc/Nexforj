@@ -7,7 +7,6 @@
 
 export const navLinks = [
   { label: 'Services', path: '/services', mega: 'services' },
-  { label: 'Materials', path: '/materials', mega: 'materials' },
   { label: 'How it works', path: '/process' },
   { label: 'About', path: '/about' },
 ]

@@ -1,3 +1,8 @@
+.about {
+  position: relative;
+  overflow: hidden;
+}
+
 .about__body {
   display: grid;
   grid-template-columns: 1.6fr 1fr;
@@ -5,7 +10,56 @@
   align-items: start;
 }
 .about__story { display: flex; flex-direction: column; gap: 1.2rem; }
-.about__para { color: var(--text-muted); line-height: 1.7; font-size: 1.05rem; }
+.about__para { color: var(--text-muted); line-height: 1.7; font-size: 1.05rem; position: relative; z-index: 2; }
+
+/* The Pencil Highlight */
+.brand-highlight {
+  position: relative;
+  display: inline-block;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.highlight-circle {
+  position: absolute;
+  top: -15%;
+  left: -10%;
+  width: 120%;
+  height: 130%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: visible;
+}
+
+/* About Page Scattered Doodles */
+.about__doodles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.about-doodle {
+  position: absolute;
+  color: var(--ink);
+  opacity: 0.1;
+  pointer-events: none;
+  filter: url(#about-sketch-filter);
+}
+[data-theme='dark'] .about-doodle { opacity: 0.15; }
+
+.ad-1 { width: 200px; height: 200px; top: 15%; left: -5%; transform: rotate(-20deg); }
+.ad-2 { width: 140px; height: 140px; top: 35%; right: 5%; transform: rotate(15deg); }
+.ad-3 { width: 100px; height: 100px; top: 55%; left: 10%; transform: rotate(-45deg); }
+.ad-4 { width: 180px; height: 180px; top: 75%; right: 10%; transform: rotate(30deg); }
+.ad-5 { width: 120px; height: 120px; bottom: 5%; left: 30%; transform: rotate(-10deg); }
+
+/* The new CAD / Company doodles */
+.ad-6 { width: 160px; height: 160px; top: 5%; right: 25%; transform: rotate(-5deg); }
+.ad-7 { width: 80px; height: 80px; top: 25%; left: 20%; transform: rotate(35deg); }
+.ad-8 { width: 150px; height: 150px; bottom: 15%; right: 2%; transform: rotate(15deg); }
+.ad-9 { width: 110px; height: 110px; bottom: 25%; left: 5%; transform: rotate(-25deg); }
 
 .about__stats {
   display: grid;
@@ -38,13 +92,42 @@
 }
 .about__princ { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
 .princ {
+  position: relative;
+  overflow: hidden;
   padding: 1.6rem;
   border-radius: var(--r-lg);
   background: var(--surface);
   border: 1px solid var(--line);
 }
+.princ__watermark {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 140px;
+  height: 140px;
+  color: var(--ink);
+  opacity: 0.08;
+  pointer-events: none;
+  transform: rotate(-15deg);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.princ:hover .princ__watermark {
+  transform: rotate(0) scale(1.1);
+  opacity: 0.12;
+}
+[data-theme='dark'] .princ__watermark { opacity: 0.1; }
+[data-theme='dark'] .princ:hover .princ__watermark { opacity: 0.18; }
+
+.princ__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
 .princ__num { font-family: var(--font-data); font-size: 0.85rem; color: var(--accent); }
-.princ__title { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--ink); margin: 0.6rem 0 0.5rem; }
+.princ__icon { color: var(--accent); }
+
+.princ__title { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--ink); margin: 0 0 0.5rem; }
 .princ__body { color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; }
 
 .about__cta {

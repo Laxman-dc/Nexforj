@@ -1,4 +1,4 @@
-# Praimo Innovations — Manufacturing Website
+# Nexforj — Manufacturing Website
 
 A content-rich, image-driven marketing site for a full-service precision
 manufacturing company. Built with **React + Vite + Framer Motion**. Warm cream

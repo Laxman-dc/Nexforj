@@ -6,7 +6,6 @@ import Logo from '../Logo.jsx'
 import { useTheme } from '../../../theme/ThemeContext.jsx'
 import { navLinks, navCta } from '../../../data/navigation.js'
 import { services } from '../../../data/services.js'
-import { materialGroups, materialsByGroup } from '../../../data/materials.js'
 import './Navbar.css'
 
 /* Build the two mega-menus straight from the data files. Add a service or a
@@ -29,33 +28,6 @@ function ServicesMega({ onPick }) {
   )
 }
 
-function MaterialsMega({ onPick }) {
-  return (
-    <div className="mega mega--materials">
-      <div className="mega__cols">
-        {materialGroups.map((g) => (
-          <div className="mega__col" key={g.id}>
-            <Link to={`/materials#${g.id}`} className="mega__col-head" onClick={onPick}>
-              {g.name}
-            </Link>
-            <ul className="mega__col-list">
-              {materialsByGroup(g.id).slice(0, 6).map((m) => (
-                <li key={m.id}>
-                  <Link to={`/materials/${m.id}`} onClick={onPick}>
-                    {m.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-      <Link to="/materials" className="mega__all" onClick={onPick}>
-        All materials <ArrowRight size={15} />
-      </Link>
-    </div>
-  )
-}
 
 export default function Navbar() {
   const { isDark, toggle } = useTheme()
@@ -126,11 +98,7 @@ export default function Navbar() {
                       onMouseEnter={() => openMega(link.mega)}
                       onMouseLeave={scheduleClose}
                     >
-                      {link.mega === 'services' ? (
-                        <ServicesMega onPick={() => setMega(null)} />
-                      ) : (
-                        <MaterialsMega onPick={() => setMega(null)} />
-                      )}
+                      <ServicesMega onPick={() => setMega(null)} />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -195,14 +163,6 @@ export default function Navbar() {
                 {services.map((s) => (
                   <Link key={s.id} to={`/services/${s.id}`} className="nav__chip">
                     {s.name}
-                  </Link>
-                ))}
-              </div>
-              <p className="nav__drawer-label">Materials</p>
-              <div className="nav__drawer-chips">
-                {materialGroups.map((g) => (
-                  <Link key={g.id} to={`/materials#${g.id}`} className="nav__chip">
-                    {g.name}
                   </Link>
                 ))}
               </div>

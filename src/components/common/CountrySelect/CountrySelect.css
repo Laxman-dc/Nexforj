@@ -1,0 +1,106 @@
+.country-select {
+  position: relative;
+  width: 140px;
+  flex: none;
+}
+
+.country-select__trigger {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color var(--t-fast);
+}
+
+.country-select__trigger:hover {
+  border-color: var(--accent);
+}
+
+.country-select__val {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.country-select__chev {
+  color: var(--text-faint);
+  flex: none;
+}
+
+.country-select__dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 260px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-md);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.country-select__search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.country-select__search svg {
+  color: var(--text-faint);
+}
+
+.country-select__search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.country-select__list {
+  list-style: none;
+  max-height: 240px;
+  overflow-y: auto;
+  padding: 0.4rem 0;
+}
+
+.country-select__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: background var(--t-fast);
+}
+
+.country-select__item:hover, .country-select__item.selected {
+  background: var(--bg-2);
+}
+
+.country-select__item .code {
+  color: var(--text-faint);
+  font-family: var(--font-data);
+}
+
+.country-select__empty {
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 0.9rem;
+}

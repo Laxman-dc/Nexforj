@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import Logo from '../Logo.jsx'
 import { services } from '../../../data/services.js'
-import { materialGroups } from '../../../data/materials.js'
 import './Footer.css'
 
 export default function Footer() {
@@ -32,22 +31,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="footer__col">
-            <h3 className="footer__head">Materials</h3>
-            <ul>
-              {materialGroups.map((g) => (
-                <li key={g.id}>
-                  <Link to={`/materials#${g.id}`}>{g.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+
 
           <div className="footer__col">
             <h3 className="footer__head">Company</h3>
             <ul>
               <li><Link to="/services">All services</Link></li>
-              <li><Link to="/materials">All materials</Link></li>
+
               <li><Link to="/process">How it works</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/order">Start a project</Link></li>
@@ -57,7 +47,7 @@ export default function Footer() {
       </div>
 
       <div className="container footer__bottom">
-        <p>© {year} Praimo Innovations. All rights reserved.</p>
+        <p>© {year} Nexforj. All rights reserved.</p>
         <p className="footer__note">Quotes provided by email after engineering review.</p>
       </div>
     </footer>

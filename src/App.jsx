@@ -9,11 +9,9 @@ import { useScrollToTop } from './hooks/useScrollToTop.js'
 import HomePage from './pages/HomePage.jsx'
 import ServicesPage from './pages/ServicesPage.jsx'
 import ServiceCategoryPage from './pages/ServiceCategoryPage.jsx'
-import MaterialsPage from './pages/MaterialsPage.jsx'
-import MaterialFamilyPage from './pages/MaterialFamilyPage.jsx'
 import ProcessPage from './pages/ProcessPage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
-import OrderPage from './pages/OrderPage.jsx'
+import ContactPage from './pages/ContactPage/ContactPage.jsx'
 
 const wrap = (el) => <PageTransition>{el}</PageTransition>
 
@@ -32,11 +30,9 @@ export default function App() {
             <Route path="/" element={wrap(<HomePage />)} />
             <Route path="/services" element={wrap(<ServicesPage />)} />
             <Route path="/services/:id" element={wrap(<ServiceCategoryPage />)} />
-            <Route path="/materials" element={wrap(<MaterialsPage />)} />
-            <Route path="/materials/:id" element={wrap(<MaterialFamilyPage />)} />
             <Route path="/process" element={wrap(<ProcessPage />)} />
             <Route path="/about" element={wrap(<AboutPage />)} />
-            <Route path="/order" element={wrap(<OrderPage />)} />
+            <Route path="/order" element={wrap(<ContactPage />)} />
             {/* Fallback → home */}
             <Route path="*" element={wrap(<HomePage />)} />
           </Routes>
