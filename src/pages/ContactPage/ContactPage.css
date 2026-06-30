@@ -428,12 +428,13 @@
   .contact-benefits {
     align-items: flex-start;
   }
-}
 
-@media (max-width: 600px) {
   .form-grid {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 600px) {
   .step-bar {
     padding: 1rem;
     gap: 1rem;

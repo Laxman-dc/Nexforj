@@ -176,10 +176,9 @@
   .order__hero-stage { order: -1; }
   .order__grid { grid-template-columns: 1fr; }
   .order__side { position: static; }
-}
-
-@media (max-width: 768px) {
+  
   .field-grid { grid-template-columns: 1fr; }
+
   .field input,
   .field select,
   .field textarea {
