@@ -66,7 +66,7 @@ export const capabilities = {
 
 export const industries = {
   eyebrow: 'Who we build for',
-  title: 'Parts for teams that cannot afford a bad one',
+  title: 'Parts for teams that cannot afford an ordinary one',
   items: [
     { title: 'Aerospace & defense', body: 'Flight-critical brackets, housings and fittings held to tight tolerance with full material traceability.' },
     { title: 'Automotive & EV', body: 'Prototype to production runs — chassis hardware, powertrain components and battery enclosures.' },
