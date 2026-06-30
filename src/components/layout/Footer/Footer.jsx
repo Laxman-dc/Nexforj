@@ -47,7 +47,7 @@ export default function Footer() {
       </div>
 
       <div className="container footer__bottom">
-        <p>© {year} Nexforj by <a href="https://www.praimoinnovations.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#111827', fontWeight: 600 }}>Praimo Innovations LLP</a>. All rights reserved.</p>
+        <p>© {year} Nexforj by <a href="https://www.praimoinnovations.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', fontWeight: 600 }}>Praimo Innovations LLP</a>. All rights reserved.</p>
       </div>
     </footer>
   )
