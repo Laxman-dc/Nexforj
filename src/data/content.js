@@ -8,7 +8,7 @@ export const hero = {
   eyebrow: 'Precision manufacturing, on demand',
   title: ['From your drawing', 'to a finished part'],
   lead:
-    'Nexforj is a full-service digital manufacturing partner. Upload a file, choose a process, and our shop floor turns it into a real, inspected part — shipped anywhere in the world. Quotes come back to your inbox after a real engineer reviews the job.',
+    'Nexforj is a full-service digital manufacturing partner. Upload a file, choose a process, and our shop floor turns it into a real, inspected part — shipped anywhere in the world.',
   primary: { label: 'Start a project', path: '/order' },
   secondary: { label: 'Explore services', path: '/services' },
 }

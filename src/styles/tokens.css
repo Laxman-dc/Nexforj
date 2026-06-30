@@ -12,20 +12,20 @@
   --blue-deep: #0f47ad;
   --navy: #0e2f63;
 
-  /* ---- LIGHT (cream) ---- */
-  --bg: #f5efe3;
-  --bg-2: #efe7d8;
-  --surface: #fffdf8;
-  --surface-2: #f2ecde;
-  --surface-3: #e9e0cf;
+  /* ---- LIGHT (crisp white) ---- */
+  --bg: #fafafa;
+  --bg-2: #f4f4f5;
+  --surface: #ffffff;
+  --surface-2: #f4f4f5;
+  --surface-3: #e4e4e7;
 
-  --ink: #1c1a16;
-  --text: #332f28;
-  --text-muted: #6f675b;
-  --text-faint: #9d9384;
+  --ink: #09090b;
+  --text: #27272a;
+  --text-muted: #52525b;
+  --text-faint: #a1a1aa;
 
-  --line: #e4dbc9;
-  --line-strong: #d6cbb4;
+  --line: #e4e4e7;
+  --line-strong: #d4d4d8;
 
   --accent: #1c66d4;
   --accent-deep: #0f47ad;
@@ -36,13 +36,13 @@
   --ember-deep: #c25a26;
   --ember-soft: #f8e7da;
 
-  --frost: rgba(255, 253, 248, 0.72);
-  --frost-line: rgba(28, 26, 22, 0.09);
+  --frost: rgba(255, 255, 255, 0.72);
+  --frost-line: rgba(9, 9, 11, 0.09);
   --ring: rgba(28, 102, 212, 0.32);
 
   /* gradients */
   --grad-brand: linear-gradient(120deg, #2f8bf0 0%, #1c66d4 55%, #0f47ad 100%);
-  --grad-brand-soft: linear-gradient(120deg, rgba(47,139,240,0.14), rgba(28,102,212,0.06));
+  --grad-brand-soft: linear-gradient(120deg, rgba(47, 139, 240, 0.14), rgba(28, 102, 212, 0.06));
   --grad-text: linear-gradient(100deg, #2f8bf0, #1c66d4 60%, #0f47ad);
   --grad-ember: linear-gradient(120deg, #f08a3e, #e2743a 60%, #c25a26);
   --grad-band: linear-gradient(180deg, var(--bg), var(--bg-2));
@@ -132,14 +132,14 @@
   --ring: rgba(90, 158, 255, 0.4);
 
   --grad-brand: linear-gradient(120deg, #5a9eff 0%, #3f7fe6 60%, #2f64c8 100%);
-  --grad-brand-soft: linear-gradient(120deg, rgba(90,158,255,0.18), rgba(90,158,255,0.05));
+  --grad-brand-soft: linear-gradient(120deg, rgba(90, 158, 255, 0.18), rgba(90, 158, 255, 0.05));
   --grad-text: linear-gradient(100deg, #74b0ff, #5a9eff 60%, #3f7fe6);
   --grad-band: linear-gradient(180deg, var(--bg), var(--bg-2));
   --grad-deep: linear-gradient(135deg, #1a3151 0%, #122440 60%, #0d1a30 100%);
 
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.3);
-  --shadow-md: 0 6px 18px rgba(0,0,0,0.45);
-  --shadow-lg: 0 22px 50px rgba(0,0,0,0.55);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 22px 50px rgba(0, 0, 0, 0.55);
 
   color-scheme: dark;
 }

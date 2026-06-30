@@ -35,7 +35,7 @@ export const services = [
     id: 'sheet-metal', name: 'Sheet Metal Fabrication', model: 'weldFrame',
     tagline: 'Sheet, plate, tube and pipe — clean and fast',
     description: 'High-power laser, waterjet and plasma systems cut metals, plastics and composites with crisp, repeatable edges straight from your drawing. Followed by bending, rolling, and full assembly.',
-    specs: { Tolerance: '±0.1 mm', 'Max sheet': '3000 × 1500 mm', 'Max thickness': 'up to 200 mm' },
+    specs: { Tolerance: '±0.76 mm / ±1°', 'Max sheet': '44" × 30"', 'Max thickness': '0.500" (12.7 mm)' },
     groups: [
       { title: 'Processes', items: ['Bending & Rolling', 'Welding and Assembly'] },
     ],
@@ -44,7 +44,7 @@ export const services = [
     id: 'laser-cutting', name: 'Laser Cutting', model: 'cutPlate',
     tagline: 'High speed, high precision profiling',
     description: 'Fiber and CO2 laser systems for rapidly cutting complex 2D profiles from sheet metal and plastics with exceptional edge quality.',
-    specs: { Tolerance: '±0.1 mm', 'Max sheet': '3000 × 1500 mm', 'Max thickness': 'up to 25 mm' },
+    specs: { Tolerance: '±0.127 mm', 'Max sheet': '44" × 30"', 'Max thickness': '0.750" (19 mm)' },
     groups: [
       { title: 'Processes', items: ['Fiber Laser', 'CO2 Laser', 'Tube Laser Cutting', 'Plasma Cutting'] },
     ],
@@ -53,7 +53,7 @@ export const services = [
     id: 'waterjet-cutting', name: 'Waterjet Cutting', model: 'cutPlate',
     tagline: 'Cold cutting for thick and sensitive materials',
     description: 'Abrasive and pure waterjet cutting to slice through thick metals, composites, and stone without heat-affected zones.',
-    specs: { Tolerance: '±0.2 mm', 'Max thickness': 'up to 200 mm', 'Materials': 'All solid materials' },
+    specs: { Tolerance: '±0.38 mm', 'Max sheet': '44" × 30"', 'Max thickness': '0.500" (12.7 mm)' },
     groups: [
       { title: 'Processes', items: ['Abrasive Waterjet', 'Pure Waterjet'] },
     ],

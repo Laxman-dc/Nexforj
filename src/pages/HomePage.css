@@ -8,10 +8,10 @@
 
 /* ============================ HERO ============================ */
 .home {
-  background-color: #ebd9c3; /* Cream coffee background for light mode */
+  background-color: var(--bg);
 }
 [data-theme='dark'] .home {
-  background-color: transparent; /* Fallback to default dark mode */
+  background-color: transparent;
 }
 
 .hero {
@@ -37,8 +37,12 @@
   font-size: 0.85rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #8fc0ff;
+  color: var(--accent-deep);
+  font-weight: 600;
   margin-bottom: 1.1rem;
+}
+[data-theme='dark'] .hero__eyebrow {
+  color: #8fc0ff;
 }
 .hero__title {
   font-family: var(--font-display);

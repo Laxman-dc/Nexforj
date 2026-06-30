@@ -19,8 +19,8 @@ export const workflow = [
     step: '02',
     title: 'Engineer Review and Quote',
     blurb:
-      'Our team checks manufacturability, suggests improvements where it helps, and sends a clear quote straight to your inbox.',
-    detail: ['DFM feedback', 'Lead-time options', 'Quote delivered by email'],
+      'Our team checks manufacturability, suggests improvements where it helps, and sends a clear quote straight to your account.',
+    detail: ['DFM feedback', 'Lead-time options', 'Quote delivered to account'],
   },
   {
     id: 'finalize',
@@ -33,7 +33,7 @@ export const workflow = [
   {
     id: 'making',
     step: '04',
-    title: 'Making',
+    title: 'Manufacture',
     blurb:
       'Your parts hit the shop floor. From CNC to Sheet Metal, your order is routed, processed, and finished entirely in-house.',
     detail: ['Production tracking', 'Quality checks', 'In-house finishing'],

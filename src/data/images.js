@@ -27,7 +27,8 @@ const ID = {
 /* ---- hero & page imagery ---- */
 export const siteImages = {
   hero: u(ID.factory, 1800),
-  heroAlt: u(ID.laser, 1600),
+  heroAlt: '/images/hero-sketch.png',
+  heroWide: '/images/hero-sketch-wide.png',
   about: '/images/about_cad.png',
   aboutWide: '/images/about_cnc.png',
   order: u(ID.cncMill, 1400),
@@ -35,10 +36,25 @@ export const siteImages = {
   ctaTexture: u(ID.gears, 1400),
 }
 
+export const serviceImagesNoBg = {
+  'cnc-machining': '/images/svc-cnc-nobg.png',
+  '3d-printing': '/images/svc-print-nobg.png',
+  'sheet-metal': '/images/svc-sheet-nobg.png',
+  'laser-cutting': '/images/lasercutted_update.png',
+  'waterjet-cutting': '/images/waterjett_updated1.png',
+  'surface-finishing': '/images/svc-finish-nobg.png',
+  'gear-manufacturing': '/images/svc-gear-nobg.png',
+  'precision-grinding': '/images/svc-grind-nobg.png',
+  'heat-treatment': '/images/svc-heat-nobg.png',
+}
+
 /* ---- one photo per service category ---- */
 export const serviceImages = {
   cutting: u(ID.laser),
   'cnc-machining': u(ID.cncMill),
+  'laser-cutting': '/images/lasercutted_update.png',
+  'sheet-metal': u(ID.weld),
+  'waterjet-cutting': '/images/waterjett_updated1.png',
   grinding: u(ID.lathe),
   'heat-treatment': u(ID.weld),
   fabrication: u(ID.weld),

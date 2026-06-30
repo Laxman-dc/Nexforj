@@ -37,7 +37,6 @@ export default function ServiceCategoryPage() {
           <Reveal as="p" className="detail__desc lead">{service.description}</Reveal>
           <Reveal className="detail__intro-actions" delay={0.05}>
             <Button to="/order">Start a project <ArrowRight size={16} /></Button>
-            <Button to="/materials" variant="ghost">Browse materials</Button>
           </Reveal>
         </div>
 

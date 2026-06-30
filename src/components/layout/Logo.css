@@ -16,8 +16,6 @@
 }
 .logo--mark .logo__img { height: 34px; }
 
-/* Invert the dark logo to white but keep the blue hue */
-[data-theme='dark'] .logo__img { filter: invert(1) hue-rotate(180deg) brightness(1.5); }
 
 @media (max-width: 560px) {
   .logo__img { height: 34px; }
