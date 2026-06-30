@@ -3,13 +3,14 @@ import { motion } from 'framer-motion'
 import { ArrowRight, ArrowDown, Check, ShieldCheck, Plane, Car, Bot, HeartPulse, Factory, Cpu } from 'lucide-react'
 import Media from '../components/common/Media.jsx'
 import ServiceCard from '../components/common/ServiceCard.jsx'
-import Reveal, { Stagger, StaggerItem } from '../components/common/Reveal.jsx'
+
 import SectionHeading from '../components/common/SectionHeading.jsx'
 import Button from '../components/common/Button.jsx'
 import Marquee from '../components/common/Marquee.jsx'
 import Faq from '../components/common/Faq.jsx'
 import Services from '../components/sections/Services/Services.jsx'
 import AnimatedProcess from '../components/sections/AnimatedProcess/AnimatedProcess.jsx'
+import IndustriesCarousel from '../components/sections/IndustriesCarousel/IndustriesCarousel.jsx'
 import {
   hero, trustStrip, valueProps, capabilities, industries, faqs, certifications,
 } from '../data/content.js'
@@ -20,14 +21,7 @@ import './HomePage.css'
 
 
 
-const industryIcons = {
-  'Aerospace & defense': Plane,
-  'Automotive & EV': Car,
-  'Robotics & automation': Bot,
-  'Medical devices': HeartPulse,
-  'Energy & industrial': Factory,
-  'Electronics & consumer': Cpu
-}
+
 
 export default function HomePage() {
   return (
@@ -122,23 +116,7 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <SectionHeading eyebrow={industries.eyebrow} title={industries.title} />
-          <Stagger className="home__inds" gap={0.06}>
-            {industries.items.map((ind) => {
-              const Icon = industryIcons[ind.title] || Factory
-              return (
-                <StaggerItem className="ind" key={ind.title}>
-                  <div className="ind__watermark" aria-hidden="true">
-                    <Icon size={180} strokeWidth={1} />
-                  </div>
-                  <div className="ind__header">
-                    <Icon size={24} className="ind__icon" />
-                    <h3 className="ind__title">{ind.title}</h3>
-                  </div>
-                  <p className="ind__body">{ind.body}</p>
-                </StaggerItem>
-              )
-            })}
-          </Stagger>
+          <IndustriesCarousel items={industries.items} />
         </div>
       </section>
 

@@ -74,6 +74,7 @@ export const industries = {
     { title: 'Medical devices', body: 'Clean, passivated stainless and biocompatible plastics machined to spec with documentation.' },
     { title: 'Energy & industrial', body: 'Heavy fabrications, cast brackets and wear parts built to survive demanding environments.' },
     { title: 'Electronics & consumer', body: 'Enclosures, heat sinks and finished housings with the surface quality a product deserves.' },
+    { title: 'Oil & Gas', body: 'Rugged components designed to withstand high pressure, extreme temperatures, and corrosive environments.' },
   ],
 }
 
