@@ -1,16 +1,4 @@
-/* =========================================================================
-   MATERIALS — complete library (serving globally, nothing omitted)
-
-   Single source of truth. Each family carries:
-     - group      : top-level category (drives the Materials page sections)
-     - grades     : every stocked grade/type
-     - model      : { shape, ...pbr } → tells the 3D viewer how to render a
-                    real, rotating component in this material's true finish
-     - specs      : quick engineering facts
-
-   To ADD a material  : copy a block, change the fields.
-   To REMOVE one      : delete the block. Pages + nav rebuild automatically.
-   `shape` ∈ block | shaft | sheet | panel | gasket | gear
+/* =====
    ========================================================================= */
 
 export const materialGroups = [

@@ -66,6 +66,7 @@ export default function Navbar() {
   }
 
   return (
+    <>
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="container nav__inner">
         <Logo />
@@ -140,40 +141,41 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
-      {/* mobile drawer */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className="nav__drawer"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.22 }}
-          >
-            <nav className="nav__drawer-inner" aria-label="Mobile">
-              {navLinks.map((link) => (
-                <NavLink key={link.label} to={link.path} className="nav__drawer-link">
-                  {link.label}
-                </NavLink>
-              ))}
-              <div className="nav__drawer-divider" />
-              <p className="nav__drawer-label">Services</p>
-              <div className="nav__drawer-chips">
-                {services.map((s) => (
-                  <Link key={s.id} to={`/services/${s.id}`} className="nav__chip">
-                    {s.name}
-                  </Link>
-                ))}
-              </div>
-              <Link to={navCta.path} className="nav__cta nav__cta--block">
-                <span>{navCta.label}</span>
-                <ArrowRight size={16} />
-              </Link>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
+
+    {/* mobile drawer */}
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          className="nav__drawer"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.22 }}
+        >
+          <nav className="nav__drawer-inner" aria-label="Mobile">
+            {navLinks.map((link) => (
+              <NavLink key={link.label} to={link.path} className="nav__drawer-link" onClick={() => setOpen(false)}>
+                {link.label}
+              </NavLink>
+            ))}
+            <div className="nav__drawer-divider" />
+            <p className="nav__drawer-label">Services</p>
+            <div className="nav__drawer-chips">
+              {services.map((s) => (
+                <Link key={s.id} to={`/services/${s.id}`} className="nav__chip" onClick={() => setOpen(false)}>
+                  {s.name}
+                </Link>
+              ))}
+            </div>
+            <Link to={navCta.path} className="nav__cta nav__cta--block" onClick={() => setOpen(false)}>
+              <span>{navCta.label}</span>
+              <ArrowRight size={16} />
+            </Link>
+          </nav>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   )
 }

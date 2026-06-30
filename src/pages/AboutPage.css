@@ -22,10 +22,10 @@
 
 .highlight-circle {
   position: absolute;
-  top: -15%;
+  top: -25%;
   left: -10%;
   width: 120%;
-  height: 130%;
+  height: 150%;
   pointer-events: none;
   z-index: -1;
   overflow: visible;

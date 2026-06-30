@@ -95,7 +95,7 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Manufacturing services"
               title="Nine process families, one floor"
-              lead="Real photographs of the work we do every day. Open any service for the full list of operations and the tolerances we hold."
+              lead="Witness the reality of our shop floor. Dive into any of our core capabilities below to explore the exact operations we run, the materials we master, and the uncompromising tolerances we hold."
             />
             <Button to="/services" variant="soft" className="home__head-cta">All services <ArrowRight size={16} /></Button>
           </div>

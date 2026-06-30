@@ -15,11 +15,11 @@ const PencilHighlight = ({ children }) => (
   <span className="brand-highlight">
     {children}
     <svg className="highlight-circle" viewBox="0 0 100 40" preserveAspectRatio="none">
-      <motion.path 
-        d="M 5,20 Q 20,2 50,5 T 95,20 Q 80,38 50,35 T 5,20" 
+      <motion.rect 
+        x="2" y="2" width="96" height="36" rx="18" ry="18"
         fill="none" 
         stroke="var(--accent)" 
-        strokeWidth="2.5" 
+        strokeWidth="1.5" 
         strokeLinecap="round"
         initial={{ pathLength: 0, opacity: 0 }}
         whileInView={{ pathLength: 1, opacity: 1 }}

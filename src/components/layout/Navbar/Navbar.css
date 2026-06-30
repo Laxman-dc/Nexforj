@@ -222,7 +222,7 @@
 @media (max-width: 940px) {
   .nav__links { display: none; }
   .nav__burger { display: inline-flex; }
-  .nav__cta { display: none; }
+  .nav__actions .nav__cta { display: none; }
 }
 @media (max-width: 560px) {
   .nav__theme { width: 40px; height: 40px; }
