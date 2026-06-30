@@ -92,6 +92,10 @@
   color: #000;
   font-weight: 600;
 }
+
+[data-theme='dark'] .home__trust-label {
+  color: var(--accent);
+}
 @media (max-width: 760px) { .home__trust-label { display: none; } }
 
 /* ============================ intro ============================ */
