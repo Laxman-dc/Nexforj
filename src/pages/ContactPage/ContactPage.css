@@ -437,6 +437,9 @@
     align-items: center;
     text-align: center;
   }
+  .contact-doodle {
+    display: none;
+  }
   .contact-benefits {
     align-items: flex-start;
   }

@@ -15,15 +15,15 @@ const PencilHighlight = ({ children }) => (
   <span className="brand-highlight">
     {children}
     <svg className="highlight-circle" viewBox="0 0 100 40" preserveAspectRatio="none">
-      <motion.rect 
+      <motion.rect
         x="2" y="2" width="96" height="36" rx="18" ry="18"
-        fill="none" 
-        stroke="var(--accent)" 
-        strokeWidth="1.5" 
+        fill="none"
+        stroke="var(--accent)"
+        strokeWidth="1.5"
         strokeLinecap="round"
         initial={{ pathLength: 0, opacity: 0 }}
         whileInView={{ pathLength: 1, opacity: 1 }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "0px" }}
         transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
         style={{ filter: 'url(#about-sketch-filter)' }}
       />
@@ -58,12 +58,7 @@ export default function AboutPage() {
         crumb="About"
         eyebrow={about.eyebrow}
         title={about.title}
-        lead={
-          <>
-            <PencilHighlight>Nexforj</PencilHighlight> connects designers and engineers to a full-service manufacturing floor through a single, calm interface. The complexity of routing a part across machines, materials and finishes stays with us — you simply describe what you need.
-          </>
-        }
-        aside={<Media src={siteImages.about} alt="Nexforj shop floor" ratio="4/3" parallax={26} />}
+        lead="Nexforj connects designers and engineers to a full-service manufacturing floor through a single, calm interface. The complexity of routing a part across machines, materials and finishes stays with us — you simply describe what you need."
       />
 
       <section className="section">
@@ -83,11 +78,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <Media src={siteImages.aboutWide} alt="Manufacturing floor" ratio="21/8" parallax={30} />
-        </div>
-      </section>
+
 
       <section className="section section--tint">
         <div className="container">

@@ -42,7 +42,7 @@ export const serviceImagesNoBg = {
   'sheet-metal': '/images/svc-sheet-nobg.png',
   'laser-cutting': '/images/lasercutted_update.png',
   'waterjet-cutting': '/images/waterjett_updated1.png',
-  'surface-finishing': '/images/svc-finish-nobg.png',
+  'surface-finishing': '/images/svc-surface-finishing-nobg.png',
   'gear-manufacturing': '/images/svc-gear-nobg.png',
   'precision-grinding': '/images/svc-grind-nobg.png',
   'heat-treatment': '/images/svc-heat-nobg.png',
@@ -62,7 +62,7 @@ export const serviceImages = {
   '3d-printing': u(ID.printer),
   casting: u(ID.weld),
   'injection-molding': u(ID.printer),
-  'surface-finishing': u(ID.glow),
+  'surface-finishing': '/images/svc-surface-finishing-nobg.png',
   'quality-inspection': u(ID.lathe),
 }
 
