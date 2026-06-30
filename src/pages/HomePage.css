@@ -94,7 +94,7 @@
 }
 
 [data-theme='dark'] .home__trust-label {
-  color: var(--accent);
+  color: var(--ink);
 }
 @media (max-width: 760px) { .home__trust-label { display: none; } }
 
