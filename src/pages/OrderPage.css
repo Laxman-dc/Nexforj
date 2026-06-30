@@ -188,4 +188,10 @@
 
 @media (max-width: 560px) {
   .order__submit { width: 100%; }
+  .dropzone {
+    padding: 1.8rem 1rem;
+  }
+  .order__summary {
+    padding: 1.4rem;
+  }
 }

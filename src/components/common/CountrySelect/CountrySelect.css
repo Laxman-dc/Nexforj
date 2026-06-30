@@ -89,7 +89,8 @@
   transition: background var(--t-fast);
 }
 
-.country-select__item:hover, .country-select__item.selected {
+.country-select__item:hover,
+.country-select__item.selected {
   background: var(--bg-2);
 }
 
