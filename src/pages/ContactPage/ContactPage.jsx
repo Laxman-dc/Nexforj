@@ -4,6 +4,7 @@ import { UploadCloud, CheckCircle2, ArrowRight, ArrowLeft, X, Factory, Cog, PenT
 import Button from '../../components/common/Button.jsx'
 import CountrySelect from '../../components/common/CountrySelect/CountrySelect.jsx'
 import { COUNTRY_CODES } from '../../data/countries.js'
+import { supabase } from '../../lib/supabase.js'
 import './ContactPage.css'
 
 const STEPS = [
@@ -19,7 +20,7 @@ const serviceList = ['Anodizing', 'Powder Coating', 'Plating', 'Heat Treatment',
 export default function ContactPage() {
   const [step, setStep] = useState(0)
   const [country, setCountry] = useState(COUNTRY_CODES.find(c => c.country.startsWith('United States')))
-  
+
   const [matPlaceholderIdx, setMatIdx] = useState(0);
   const [procPlaceholderIdx, setProcIdx] = useState(0);
   const [svcPlaceholderIdx, setSvcIdx] = useState(0);
@@ -46,9 +47,9 @@ export default function ContactPage() {
     notes: '',
     files: []
   })
-  
+
   const [errors, setErrors] = useState({})
-  
+
   const validateStep = () => {
     const newErrors = {}
     if (step === 0) {
@@ -56,7 +57,7 @@ export default function ContactPage() {
       if (!formData.lastName) newErrors.lastName = 'Required'
       if (!formData.email) newErrors.email = 'Required'
       else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email'
-      
+
       if (!formData.phone) newErrors.phone = 'Required'
       else if (country.pattern && !country.pattern.test(formData.phone.replace(/\s+/g, ''))) {
         newErrors.phone = 'Invalid format for ' + country.country
@@ -72,9 +73,64 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0
   }
 
-  const nextStep = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const nextStep = async () => {
     if (validateStep()) {
-      setStep(s => Math.min(STEPS.length, s + 1))
+      if (step === 2) {
+        setIsSubmitting(true)
+        try {
+          const fileUrls = []
+          for (const file of formData.files) {
+            const fileName = `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`
+            const { data, error } = await supabase.storage
+              .from('project_files')
+              .upload(fileName, file)
+
+            if (error) throw error
+
+            const { data: publicUrlData } = supabase.storage
+              .from('project_files')
+              .getPublicUrl(fileName)
+
+            fileUrls.push(publicUrlData.publicUrl)
+          }
+
+          const quoteRecord = {
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            email: formData.email,
+            phone: formData.phone,
+            company: formData.company,
+            material: formData.material,
+            process: formData.process,
+            service: formData.service,
+            quantity: formData.quantity,
+            notes: formData.notes,
+            file_urls: fileUrls
+          }
+
+          const { error } = await supabase
+            .from('quotes')
+            .insert([quoteRecord])
+
+          if (error) throw error
+
+          // Invoke Edge Function — use the object we already built, not data[0]
+          await supabase.functions.invoke('send-quote', {
+            body: { record: quoteRecord }
+          })
+
+          setStep(s => Math.min(STEPS.length, s + 1))
+        } catch (error) {
+          console.error('Error submitting form:', error)
+          alert('There was an error submitting your request. Please check the console for details.')
+        } finally {
+          setIsSubmitting(false)
+        }
+      } else {
+        setStep(s => Math.min(STEPS.length, s + 1))
+      }
     }
   }
 
@@ -118,7 +174,7 @@ export default function ContactPage() {
     <div className="contact-page">
       <section className="section contact-split-section">
         <div className="container contact-split">
-          
+
           <div className="contact-split__left">
             {/* SVG Filter to make icons look like hand-drawn sketches */}
             <svg style={{ width: 0, height: 0, position: 'absolute' }}>
@@ -194,16 +250,16 @@ export default function ContactPage() {
                   {step === 1 && (
                     <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
                       <div className="form-grid">
-                        
+
                         <div className="form-group full-width">
                           <label>Material</label>
-                          <input 
+                          <input
                             type="text"
-                            name="material" 
+                            name="material"
                             placeholder={`e.g., ${materialsList[matPlaceholderIdx]}`}
-                            value={formData.material} 
-                            onChange={handleChange} 
-                            className={errors.material ? 'error' : ''} 
+                            value={formData.material}
+                            onChange={handleChange}
+                            className={errors.material ? 'error' : ''}
                             autoComplete="off"
                           />
                           {errors.material && <span className="error-msg">{errors.material}</span>}
@@ -211,13 +267,13 @@ export default function ContactPage() {
 
                         <div className="form-group full-width">
                           <label>Manufacturing Process</label>
-                          <input 
+                          <input
                             type="text"
-                            name="process" 
+                            name="process"
                             placeholder={`e.g., ${processList[procPlaceholderIdx]}`}
-                            value={formData.process} 
-                            onChange={handleChange} 
-                            className={errors.process ? 'error' : ''} 
+                            value={formData.process}
+                            onChange={handleChange}
+                            className={errors.process ? 'error' : ''}
                             autoComplete="off"
                           />
                           {errors.process && <span className="error-msg">{errors.process}</span>}
@@ -225,12 +281,12 @@ export default function ContactPage() {
 
                         <div className="form-group full-width">
                           <label>Additional Services / Finishing (Optional)</label>
-                          <input 
+                          <input
                             type="text"
-                            name="service" 
+                            name="service"
                             placeholder={`e.g., ${serviceList[svcPlaceholderIdx]}`}
-                            value={formData.service} 
-                            onChange={handleChange} 
+                            value={formData.service}
+                            onChange={handleChange}
                             autoComplete="off"
                           />
                         </div>
@@ -252,7 +308,7 @@ export default function ContactPage() {
                     <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
                       <div className="form-group full-width">
                         <label>Upload CAD or Drawings</label>
-                        <div 
+                        <div
                           className={`dropzone ${errors.files ? 'error' : ''}`}
                           onDragOver={(e) => e.preventDefault()}
                           onDrop={handleDrop}
