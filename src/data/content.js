@@ -20,8 +20,8 @@ export const stats = [
 ]
 
 export const trustStrip = [
-  'Rieter', 'Hitachi', 'Halliburton', 'ITC', 'Indian Railways',
-  'India Forge', 'Bharat Forge', 'Larsen & Toubro', 'Tata Motors',
+  'Rieter', 'Hitachi', 'ITC', 'Indian Railways',
+  'Idea Forge', 'Rebel Foods', 'Urban Company', ' Spark Minda', ' Astemo ', ' Jio BP',
 ]
 
 export const valueProps = [
